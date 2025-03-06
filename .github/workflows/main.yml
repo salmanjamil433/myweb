@@ -1,0 +1,14 @@
+name: Clone Repository
+
+on: [push, pull_request, workflow_dispatch]  # Jab bhi push, PR ya manually trigger ho
+
+jobs:
+  clone-repo:
+    runs-on: [self-hosted, ubuntu-latest]  # Self-hosted runner ka use karein
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4  # Repo clone karne ke liye
+
+      - name: Display Success Message
+        run: echo "✅ Repository successfully cloned!"
